@@ -1,4 +1,4 @@
 Pillow
 speechbrain
 streamlit
-PyAudio
+pydub/simpleaudio 
