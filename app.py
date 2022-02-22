@@ -70,8 +70,6 @@ def record_aud(time_in_sec, record):
 
 
 st.set_page_config(page_title="Speech Recognition", page_icon="\U0001f399")
-original = Image.open("logo.png")
-st.image(original, use_column_width=True)
 
 number = st.number_input('Insert maximal recording time in second')
 st.write('Maximum recording time will be  ', number, 'second')
