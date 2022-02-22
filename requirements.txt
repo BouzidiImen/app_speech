@@ -1,0 +1,4 @@
+Pillow
+speechbrain
+streamlit
+PyAudio
