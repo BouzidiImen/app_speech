@@ -1,5 +1,4 @@
 Pillow
 speechbrain
 streamlit
-portaudio19-dev
 python3-pyaudio
