@@ -1,4 +1,4 @@
 Pillow
 speechbrain
 streamlit
-python3-pyaudio
+pydub==0.24.1
