@@ -22,6 +22,8 @@ def record_aud(time_in_sec, record):
     if record:
         st.write('Please speak...')
         filename = "filename.wav"
+        asr_model = EncoderASR.from_hparams(source="speechbrain/asr-wav2vec2-commonvoice-fr",
+                                            savedir="pretrained_models/asr-wav2vec2-commonvoice-fr")
         # generate file names based on input of doctor's name or ask
         p = pyaudio.PyAudio()  # Create an interface to PortAudio
         # Open a Stream with the values we just defined
@@ -57,8 +59,7 @@ def record_aud(time_in_sec, record):
         audio_file = open(filename, 'rb')
         audio_bytes = audio_file.read()
         st.audio(audio_bytes, format='audio/wav')
-        asr_model = EncoderASR.from_hparams(source="speechbrain/asr-wav2vec2-commonvoice-fr",
-                                            savedir="pretrained_models/asr-wav2vec2-commonvoice-fr")
+        
         # asr_model = EncoderASR.from_hparams(source="pretrained_models/asr-wav2vec2-commonvoice-fr")
         text = st.text_area("Predicted Text", asr_model.transcribe_file(filename), key=None, height=400)
         # output text in bloc note with filename customizable
